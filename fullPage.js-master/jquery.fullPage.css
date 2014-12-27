@@ -24,13 +24,14 @@ html, body {
     touch-action: none;
 }
 .fp-section {
+	float: right;                                                   /*KQS ADDED BY KENTON TO FLOAT STUFF TO THE RIGHT*/
     position: relative;
     -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
     -moz-box-sizing: border-box; /* <=28 */
     box-sizing: border-box;
 }
 .fp-slide {
-    float: left;                                      /*changed from left to right by Kenton*/
+    float: left;                                                     /*KQS Not using slides so changing this to float: right does nothing*/
 }
 .fp-slide, .fp-slidesContainer {
     height: 100%;
@@ -47,7 +48,7 @@ html, body {
 .fp-section.fp-table, .fp-slide.fp-table {
     display: table;
     table-layout:fixed;
-    width: 91%;   /*Possibly is what is causing 100% width */
+    width: 91%;                                                            /*KQS THIS IS is what is causing 100% width */
 }
 .fp-tableCell {
     display: table-cell;
@@ -56,7 +57,7 @@ html, body {
     height: 100%;
 }
 .fp-slidesContainer {
-    float: left;                 /*changed from left to right by Kenton*/
+    float: left;                                                            /*KQS Not using slides so changing this to float: right does nothing*/
     position: relative;
 }
 .fp-controlArrow {
