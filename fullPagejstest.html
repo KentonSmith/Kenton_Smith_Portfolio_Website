@@ -1,51 +1,258 @@
 <!DOCTYPE html>
 <head>
 	<meta charset= "UTF-8">
-	<title>fullPagejstest</title>
 	<link rel="stylesheet" type="text/css" href="fullPage.js-master/jquery.fullPage.css"/> <!--fullPage.js stylesheet --> 
 	<link rel="stylesheet" type="text/css" href="slick-1.3.15/slick/slick.css"/> <!--SLICK CSS... REMEMBER ORDER of stylesheets if it actually works-->
+	 <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css' />
+	  <title>Kenton Smith's Website</title>
+  	<link rel="icon" href="smileyface.ico" type="image/x-icon" />
+  	
+  	
 	<style>
 	* {
 		overflow: visible;
+		   margin: 0;
+           padding: 0;
+          font-family: 'Roboto', sans-serif;
 	}
-		.right {
-			height: 100vh;
-			width: 91%;
-			float: right;
-		}
-		#part3 {
+
+		#portfolio_part {
 			background-color: yellow;
 		}
-		#part2, #part4 {
+		#about_part, #contact_part {
 			background-color: purple;
 		}
 		.slick_slide {
 			background-color: blue;
 			height: 100vh;
 		}
+		                        #navbar {
+                                float: left;
+                                left: 0px;
+                                width: 9%;
+                                /*width: 12%;*/
+                                position:fixed;
+                                margin-left: 0;
+                                padding-left: 0;
+                                height: 100vh;
+                                background-color:black;
+                                margin-top: 0;
+                                padding-top: 0;
+                                overflow: visible;
+                                z-index: 10; 
+
+                        }
+                        #navbar ul {
+                                list-style: none;
+                                padding-top: 17.5vh;
+                                margin-left: 0;
+                                padding-left: 0;
+                                overflow: visible;
+                                z-index: 10; 
+
+                                
+                        }
+                        .mynavbutton {
+                                /*background-color: #0066CC;*/
+                               background: #d0e4f7; /* Old browsers */
+								background: -moz-linear-gradient(top, #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%); /* FF3.6+ */
+								background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0e4f7), color-stop(24%,#73b1e7), color-stop(50%,#0a77d5), color-stop(79%,#539fe1), color-stop(100%,#87bcea)); /* Chrome,Safari4+ */
+								background: -webkit-linear-gradient(top, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Chrome10+,Safari5.1+ */
+								background: -o-linear-gradient(top, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Opera 11.10+ */
+								background: -ms-linear-gradient(top, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* IE10+ */
+								background: linear-gradient(to bottom, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* W3C */
+								
+                                color:black;
+                                font-weight: bold;
+                                text-align: center;
+                                height: 15vh;
+                                border: solid black 6px;
+                                width: 85%; /* used to be 67% */
+                               
+								position: relative;
+ 
+                              /*  padding-top: 33%;
+                                padding-bottom: -50px;
+                                font-size: 1.3em; */
+                                 overflow: visible;
+                                z-index: 10; 
+                                cursor: pointer;
+                                -webkit-transition: all 0.3s ease-in-out;
+                                -moz-transition: all 0.3s ease-in-out;
+                                -o-transition: all 0.3s ease-in-out;
+                                -ms-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                        }
+                                                .extend_nav_button {
+                                background: #feffff; /* Old browsers */
+								background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
+								background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
+								background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10+,Safari5.1+ */
+								background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Opera 11.10+ */
+								background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
+								background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
+								color: #0000FF;
+                                width: 115%; /*used to be 90%*/
+                                font-size: 1.7em;
+                                /*padding-top:*/ 
+                                text-decoration: underline;
+                                 overflow: visible;
+                                z-index: 10;  
+                        }
+                        
+                        .highlighted_button {  /*use when hovering over section on the right */
+                        	background-image: -webkit-gradient(linear,left bottom,left bottom,color-stop(0, #EEFF6E),color-stop(0.79, #F74A00));
+							background-image: -o-linear-gradient(left bottom, #EEFF6E 0%, #F74A00 79%);
+							background-image: -moz-linear-gradient(left bottom, #EEFF6E 0%, #F74A00 79%);
+							background-image: -webkit-linear-gradient(left bottom, #EEFF6E 0%, #F74A00 79%);
+							background-image: -ms-linear-gradient(left bottom, #EEFF6E 0%, #F74A00 79%);
+							background-image: linear-gradient(to left bottom, #EEFF6E 0%, #F74A00 79%);	
+                        }
+                        .highlighted_text_in_button {
+                        	color: white;
+                        	text-shadow: 0.1em 0.1em 0.2em black;
+                        	
+                        }
+                                                .mynavbutton p {
+                                font-size: 3vh;
+								position: absolute;
+								top: 35%;
+                        }
+                        
+                        #home_button p, #about_button p {
+                        	left: 18%;
+                        }
+                        #contact_button p, #portfolio_button p {
+                        	left: 7%;
+                        }
+                        
+                        .extend_nav_button#home_button p, .extend_nav_button#about_button p{    /*multi selector has extend_nav button AND home/about_button */
+							left: 26.5%;
+                        } 
+                        .extend_nav_button#portfolio_button p { /*multi selector has extend_nav button AND portfolio_button */
+                        	left: 17%;
+                        }
+                        .extend_nav_button#contact_button p { /*multi selector has extend_nav button AND contact_button */
+                        	left: 20%;
+                        } 
+       
+                        
+
 	</style>
 	  <script src="jquery-2.1.3.min.js" type="text/javascript"></script> <!-- jQuery -->
 	<script type="text/javascript" src="fullPage.js-master/jquery.fullPage.js"></script> <!-- fullPage.js jquery plugin-->
 	  <script type="text/javascript" src="slick-1.3.15/slick/slick.js"></script><!-- Slick jquery plugin. Need to go to slick.css to format dots-->
+	
+	<!-- Scroll to a particular div https://github.com/ramswaroop/animatescroll.js ACTUALLY WORKS-->
+<script type="text/javascript" src="animatescroll.js-master/animatescroll.js"></script>
+	
+	  
+	    <script type="text/javascript">
+//<![CDATA[
+                        $(document).ready(function(){
+                        	
+                                $('.mynavbutton').hover(   //.mynavbutton not #mynavbutton
+                                        function() {
+                                                $(this).addClass('extend_nav_button');   
+                                        }
+                                        , 
+                                        function() {
+                                                $(this).removeClass('extend_nav_button');                                               
+                                        }
+                                );
+                                
+                               $('#home_button').click(function() {
+                               		
+                               		alert('home');
+                               		$('#home_part').animatescroll({scrollSpeed: 500});
+                               });
+                               
+                               $('#about_button').click(function() {
+                               	
+                               		alert('about');
+
+                               });
+                               
+                               $('#portfolio_button').click(function() {
+                               		
+                               		alert('portfolio');
+
+                               });
+                               $('#contact_button').click(function() {
+                               		
+                               		alert('contact');
+
+                               });
+                               
+                              /*Hover over turn navbar button red for corresponding part of page*/
+                               
+                               $("#home_part").hover(
+                               	function() {$('#home_button').addClass('highlighted_button');
+                               	$('#home_button').addClass('highlighted_text_in_button');
+                               	},
+                               	function() {$('#home_button').removeClass('highlighted_button');
+                               	$('#home_button').removeClass('highlighted_text_in_button');}
+                               );
+                               
+                                $("#about_part").hover(
+                               	function() {$('#about_button').addClass('highlighted_button');
+                               	$('#about_button').addClass('highlighted_text_in_button');
+                               	},
+                               	function() {$('#about_button').removeClass('highlighted_button');
+                               	$('#about_button').removeClass('highlighted_text_in_button');}
+                               );
+                               
+                               $("#portfolio_part").hover(
+                               	function() {$('#portfolio_button').addClass('highlighted_button');
+                               	$('#portfolio_button').addClass('highlighted_text_in_button');
+                               	},
+                               	function() {$('#portfolio_button').removeClass('highlighted_button');
+                               	$('#portfolio_button').removeClass('highlighted_text_in_button');}
+                               );
+                                
+                               $("#contact_part").hover(
+                               	function() {$('#contact_button').addClass('highlighted_button');
+                               	$('#contact_button').addClass('highlighted_text_in_button');
+                               	},
+                               	function() {$('#contact_button').removeClass('highlighted_button');
+                               	$('#contact_button').removeClass('highlighted_text_in_button');}
+                               );
+                               
+                               /*Hover over turn navbar button red for corresponding part of page*/
+                               
+                        });     
+                        
+  //]]>
+  </script>
+	 
 </head>
 
 <header></header>
 <body>
+	<div id = "navbar">
+		<ul>
+	      <li class="mynavbutton" id="home_button"><p>Home</p></li>
+	      <li class="mynavbutton" id="about_button"><p>About</p></li>
+	      <li class="mynavbutton" id="portfolio_button"><p>Portfolio</p></li>
+	      <li class="mynavbutton" id="contact_button"><p>Contact</p></li>
+	    </ul>
+	</div>
+	
 	<div id="fullpage">
-		<div id="part1" class = "section">
+		<div id="home_part" class = "section">
 			<div class = "slick_slide">Slick Slide 1</div>
 			<div class = "slick_slide">Slick Slide 2</div>
 			<div class = "slick_slide">Slick Slide 3</div>
 			<div class = "slick_slide">Slick Slide 4</div>
 		</div>  
-		<div id = "part2" class = "section">Section 2</div>
-		<div id = "part3" class = "section">Section 3</div>
-		<div id = "part4" class = "section">Section 4</div>
+		<div id = "about_part" class = "section">About</div>
+		<div id = "portfolio_part" class = "section">Portfolio</div>
+		<div id = "contact_part" class = "section">Contact</div>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			///SLICK PLUGIN MUST COME BEFORE FULL PAGE JQUERY PLUGIN
-					 $('#part1').slick({
+					 $('#home_part').slick({
             	autoplay: true,
             	autoplaySpeed: 5000,  //Time it stays on one slide
             	speed: 800,   //Transition speed
